@@ -7,5 +7,14 @@
     "name": "db",
     "user": "",
     "connector": "mongodb"
+  },
+  "filestore": {
+    "host": "localhost",
+    "port": 27016,
+    "database": "loopback-presentation",
+    "password": "",
+    "name": "filestore",
+    "user": "",
+    "connector": "loopback-component-storage-mongo"
   }
 }

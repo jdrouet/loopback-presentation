@@ -35,5 +35,9 @@
   "Article": {
     "dataSource": "db",
     "public": true
+  },
+  "Sandbox": {
+    "dataSource": "filestore",
+    "public": true
   }
 }
