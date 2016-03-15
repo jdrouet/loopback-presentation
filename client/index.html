@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" ng-app="loopback-example">
+<head>
+  <meta charset="utf-8">
+  <title>Loopback example</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-resource.min.js"></script>
+  <script src="application.js"></script>
+  <script src="server.js"></script>
+</head>
+<body>
+
+  <div class="container" ng-controller="MainCtrl">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">Authentication</div>
+          <div class="panel-body">
+            <form ng-submit="login()" novalidate>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" ng-model="account.email" />
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" ng-model="account.password" />
+              </div>
+              <button type="submit" class="btn btn-block btn-success">Log in</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">Authenticated user</div>
+          <div class="panel-body">
+            <pre>{{ auth | json }}</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">Article creation</div>
+          <div class="panel-body">
+            <form ng-submit="create()" novalidate>
+              <div class="form-group">
+                <label>title</label>
+                <input type="text" class="form-control" ng-model="article.title" />
+              </div>
+              <div class="form-group">
+                <label>Content</label>
+                <textarea class="form-control" ng-model="article.content"></textarea>
+              </div>
+              <button type="submit" class="btn btn-block btn-success">Create</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">Articles</div>
+          <div class="panel-body">
+            <div class="list-group">
+              <div class="list-group-item" ng-repeat="item in articles">
+                <h4 class="list-group-item-heading">{{ item.title }}</h4>
+                <p class="list-group-item-text">{{ item.content }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">Say hello !</div>
+          <div class="panel-body">
+            <form ng-submit="sayHello()" novalidate>
+              <div class="form-group">
+                <label>title</label>
+                <input type="text" class="form-control" ng-model="hello.name" />
+              </div>
+              <button type="submit" class="btn btn-block btn-success">Create</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">Hello answer</div>
+          <div class="panel-body">
+            <pre>{{ helloMessage | json }}</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
