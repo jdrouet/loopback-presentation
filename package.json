@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "server/server.js",
   "scripts": {
-    "start": "node .",
+    "start": "pm2 start application.json",
+    "monit": "pm2 monit",
     "pretest": "jshint .",
     "posttest": "nsp check"
   },
@@ -15,6 +16,7 @@
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^2.1.0",
     "loopback-datasource-juggler": "^2.39.0",
+    "pm2": "^1.0.2",
     "serve-favicon": "^2.0.1"
   },
   "devDependencies": {

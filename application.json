@@ -1,0 +1,5 @@
+{
+  "name": "loopback-presentation",
+  "script": "server/server.js",
+  "watch": true
+}
