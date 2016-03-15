@@ -1,6 +1,11 @@
 {
   "db": {
+    "host": "localhost",
+    "port": 27016,
+    "database": "loopback-presentation",
+    "password": "",
     "name": "db",
-    "connector": "memory"
+    "user": "",
+    "connector": "mongodb"
   }
 }
